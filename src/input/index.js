@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import { FormGroup, InputGroup } from 'react-bootstrap';
 import Textarea from 'react-textarea-autosize';
 import InputPopup from './popup';
 import './style.css';
@@ -91,20 +90,15 @@ export class InputWrapper extends Component {
 		const { predicate, data } = this.props;
 		return (
 			<div className="custom-input-control">
-				<FormGroup>
-					<InputGroup>
-						<InputGroup.Addon> + </InputGroup.Addon>
-						<Textarea
-							className="form-control"
-							minRows={2}
-							maxRows={5}
-							ref={(input) => this.input = input}
-							value={value}
-							onKeyDown={(e) => this.onKeyDown(e)}
-							onChange={(e) => this.handleChange(e)}
-						/>
-					</InputGroup>
-				</FormGroup>
+				<Textarea
+					className="form-control"
+					minRows={2}
+					maxRows={5}
+					ref={(input) => this.input = input}
+					value={value}
+					onKeyDown={(e) => this.onKeyDown(e)}
+					onChange={(e) => this.handleChange(e)}
+				/>
 				<InputPopup
 					ref={(popup) => this.popup = popup}
 					show={showPopup}

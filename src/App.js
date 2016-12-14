@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { FormGroup, InputGroup } from 'react-bootstrap';
+
 import InputControl from './input';
 import { Avatar as RenderAvatar, matchNames } from './Avatar';
 import './App.css';
@@ -29,16 +31,21 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-				<InputControl
-					onChange={(e) => console.log('receive value', e)}
-					tagSymbol="@"
-					data={this.state.peoples}
-					predicate={{
-						key: 'username',
-						selector: matchNames,
-						element: <RenderAvatar />,
-					}}
-				/>
+				<FormGroup>
+					<InputGroup>
+						<InputGroup.Addon> + </InputGroup.Addon>
+						<InputControl
+							onChange={(e) => console.log('receive value', e)}
+							tagSymbol="@"
+							data={this.state.peoples}
+							predicate={{
+								key: 'username',
+								selector: matchNames,
+								element: <RenderAvatar />,
+							}}
+						/>
+					</InputGroup>
+				</FormGroup>
       </div>
     );
   }
