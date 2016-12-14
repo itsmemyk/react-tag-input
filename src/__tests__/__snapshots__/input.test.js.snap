@@ -1,0 +1,245 @@
+exports[`Featured Input Component Should render correctly 1`] = `
+<div
+  className="custom-input-control">
+  <div
+    className="form-group">
+    <span
+      className="input-group">
+      <span
+        className="input-group-addon">
+         + 
+      </span>
+      <input
+        className="form-control"
+        id={undefined}
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        type="text"
+        value="" />
+    </span>
+  </div>
+  <div
+    className="custom-popup" />
+</div>
+`;
+
+exports[`Featured Input Component Should show popup on tag char i.e. @ 1`] = `
+<div
+  className="custom-input-control">
+  <div
+    className="form-group">
+    <span
+      className="input-group">
+      <span
+        className="input-group-addon">
+         + 
+      </span>
+      <input
+        className="form-control"
+        id={undefined}
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        type="text"
+        value="" />
+    </span>
+  </div>
+  <div
+    className="custom-popup" />
+</div>
+`;
+
+exports[`Featured Input Component Should show popup on tag char i.e. @ 2`] = `
+<div
+  className="custom-input-control">
+  <div
+    className="form-group">
+    <span
+      className="input-group">
+      <span
+        className="input-group-addon">
+         + 
+      </span>
+      <input
+        className="form-control"
+        id={undefined}
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        type="text"
+        value="@" />
+    </span>
+  </div>
+  <div
+    className="custom-popup">
+    <div
+      className="panel panel-default"
+      id={undefined}>
+      <div
+        className="panel-heading">
+        <div
+          className="panel-title">
+          People 
+        </div>
+      </div>
+      <div
+        className="panel-body">
+        <ul>
+          <li
+            className="selected"
+            onClick={[Function]}
+            onMouseEnter={[Function]}>
+            <div>
+              <span>
+                 
+                <img
+                  alt="Mayank Mahadevwala"
+                  src="https://ca.slack-edge.com/T0S9307C3-U0TBEUYUF-ga0b7c75171c-48" />
+                 
+              </span>
+              <b>
+                 
+                itsmemyk
+                 
+              </b>
+              <span>
+                 
+                Mayank Mahadevwala
+                 
+              </span>
+            </div>
+          </li>
+          <li
+            className=""
+            onClick={[Function]}
+            onMouseEnter={[Function]}>
+            <div>
+              <span>
+                 
+                <img
+                  alt="Soham Solanki"
+                  src="https://ca.slack-edge.com/T0S9307C3-U0T3Y7YE9-g741fb107a95-48" />
+                 
+              </span>
+              <b>
+                 
+                sos
+                 
+              </b>
+              <span>
+                 
+                Soham Solanki
+                 
+              </span>
+            </div>
+          </li>
+          <li
+            className=""
+            onClick={[Function]}
+            onMouseEnter={[Function]}>
+            <div>
+              <span>
+                 
+                <img
+                  alt="Tirupa Magroliya"
+                  src="https://ca.slack-edge.com/T0S9307C3-USLACKBOT-sv1444671949-48" />
+                 
+              </span>
+              <b>
+                 
+                tirupa
+                 
+              </b>
+              <span>
+                 
+                Tirupa Magroliya
+                 
+              </span>
+            </div>
+          </li>
+          <li
+            className=""
+            onClick={[Function]}
+            onMouseEnter={[Function]}>
+            <div>
+              <span>
+                 
+                <img
+                  alt="Amit Patel"
+                  src="https://ca.slack-edge.com/T0S9307C3-U0SS32SG7-g4c8f334018e-48" />
+                 
+              </span>
+              <b>
+                 
+                amit
+                 
+              </b>
+              <span>
+                 
+                Amit Patel
+                 
+              </span>
+            </div>
+          </li>
+          <li
+            className=""
+            onClick={[Function]}
+            onMouseEnter={[Function]}>
+            <div>
+              <span>
+                 
+                <img
+                  alt="Bhavik Kheni"
+                  src="https://ca.slack-edge.com/T0S9307C3-U10AWP6A1-g6c660b98934-48" />
+                 
+              </span>
+              <b>
+                 
+                bhavikkheni
+                 
+              </b>
+              <span>
+                 
+                Bhavik Kheni
+                 
+              </span>
+            </div>
+          </li>
+          <li
+            className=""
+            onClick={[Function]}
+            onMouseEnter={[Function]}>
+            <div>
+              <b>
+                 
+                everyone
+                 
+              </b>
+              <span>
+                 
+                Notify everyone in your team
+                 
+              </span>
+            </div>
+          </li>
+          <li
+            className=""
+            onClick={[Function]}
+            onMouseEnter={[Function]}>
+            <div>
+              <b>
+                 
+                here
+                 
+              </b>
+              <span>
+                 
+                Notify everyone in your team
+                 
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;

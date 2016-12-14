@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import { FormGroup, InputGroup, FormControl } from 'react-bootstrap';
+import { FormGroup, InputGroup } from 'react-bootstrap';
 import Textarea from 'react-textarea-autosize';
 import InputPopup from './popup';
 import './style.css';
@@ -98,7 +98,6 @@ export class InputWrapper extends Component {
 							className="form-control"
 							minRows={2}
 							maxRows={5}
-							style={{ maxHeight: 300 }}
 							ref={(input) => this.input = input}
 							value={value}
 							onKeyDown={(e) => this.onKeyDown(e)}
