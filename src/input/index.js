@@ -18,10 +18,10 @@ const joinKeyword = (value, patch, limit, key) => {
 }
 
 export class InputWrapper extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
-			value: '',
+			value: props.defaultValue,
 			showPopup: false,
 			keyword: '',
 		};
@@ -121,11 +121,13 @@ InputWrapper.propTypes = {
 	data: PropTypes.array,
 	predicate: PropTypes.object.isRequired,
 	tagSymbol: PropTypes.string,
+	defaultValue: PropTypes.string,
 	onChange: PropTypes.func,
 };
 
 InputWrapper.defaultProps = {
 	data: [],
+	defaultValue: '',
 	predicate: {
 		key: 'username',
 		selector: () => true,
