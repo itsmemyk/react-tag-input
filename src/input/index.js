@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import Textarea from 'react-textarea-autosize';
 import InputPopup from './popup';
 import './style.css';
 
@@ -28,7 +27,11 @@ export class InputWrapper extends Component {
 	}
 
 	getNode() {
-		return ReactDOM.findDOMNode(this.input._rootDOMNode);
+		let node = this.input;
+		if (this.props.elementNode) {
+			node = node[this.props.elementNode];
+		}
+		return ReactDOM.findDOMNode(node);
 	}
 
 	setValues(data) {
@@ -87,18 +90,17 @@ export class InputWrapper extends Component {
 
 	render() {
 		const { showPopup, value, keyword } = this.state;
-		const { predicate, data } = this.props;
+		const { predicate, data, element } = this.props;
 		return (
 			<div className="custom-input-control">
-				<Textarea
-					className="form-control"
-					minRows={2}
-					maxRows={5}
-					ref={(input) => this.input = input}
-					value={value}
-					onKeyDown={(e) => this.onKeyDown(e)}
-					onChange={(e) => this.handleChange(e)}
-				/>
+				{
+					React.cloneElement(element, {
+						value,
+						ref: (input) => this.input = input,
+						onKeyDown: (e) => this.onKeyDown(e),
+						onChange: (e) => this.handleChange(e),
+					})
+				}
 				<InputPopup
 					ref={(popup) => this.popup = popup}
 					show={showPopup}
@@ -118,12 +120,16 @@ InputWrapper.propTypes = {
 	predicate: PropTypes.object.isRequired,
 	tagSymbol: PropTypes.string,
 	defaultValue: PropTypes.string,
+	element: PropTypes.any,
+	elementNode: PropTypes.any,
 	onChange: PropTypes.func,
 };
 
 InputWrapper.defaultProps = {
 	data: [],
 	defaultValue: '',
+	element: <input type="text" />,
+	elementNode: null,
 	predicate: {
 		key: 'username',
 		selector: () => true,

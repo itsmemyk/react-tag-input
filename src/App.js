@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FormGroup, InputGroup } from 'react-bootstrap';
+import Textarea from 'react-textarea-autosize';
 
 import InputControl from './input';
 import { Avatar as RenderAvatar, matchNames } from './Avatar';
@@ -35,14 +36,20 @@ class App extends Component {
 					<InputGroup>
 						<InputGroup.Addon> + </InputGroup.Addon>
 						<InputControl
-							onChange={(e) => console.log('receive value', e)}
 							tagSymbol="@"
-							data={this.state.peoples}
+							element={<Textarea
+								className="form-control"
+								minRows={2}
+								maxRows={5}
+							/>}
+							elementNode="_rootDOMNode"
 							predicate={{
 								key: 'username',
 								selector: matchNames,
 								element: <RenderAvatar />,
 							}}
+							data={this.state.peoples}
+							onChange={(e) => console.log('receive value', e)}
 						/>
 					</InputGroup>
 				</FormGroup>
