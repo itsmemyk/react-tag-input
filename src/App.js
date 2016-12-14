@@ -47,8 +47,8 @@ class App extends Component {
 								key: 'username',
 								selector: matchNames,
 								element: <RenderAvatar />,
+								data: this.state.peoples,
 							}}
-							data={this.state.peoples}
 							onChange={(e) => console.log('receive value', e)}
 						/>
 					</InputGroup>

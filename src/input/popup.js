@@ -12,7 +12,7 @@ export class InputPopup extends Component {
 	}
 
 	getData() {
-		return this.props.data;
+		return this.props.predicate.data;
 	}
 
 	triggerKeyboard(e) {
@@ -66,7 +66,7 @@ export class InputPopup extends Component {
 
 	render() {
 		const { selected } = this.state;
-		const { data, show, keyword, predicate } = this.props;
+		const { show, keyword, predicate } = this.props;
 		const title = <div>People </div>;
 		return (
 			<div className="custom-popup">
@@ -75,7 +75,7 @@ export class InputPopup extends Component {
 					<Panel expanded={show} header={title}>
 						<ul>
 							{
-								data.filter((record) => predicate.selector(record, keyword))
+								this.getData().filter((record) => predicate.selector(record, keyword))
 								.map((record, i) => {
 									const username = record[predicate.key];
 									return (
@@ -103,7 +103,6 @@ export class InputPopup extends Component {
 InputPopup.propTypes = {
 	show: PropTypes.bool,
 	keyword: PropTypes.string,
-	data: PropTypes.array,
 	predicate: PropTypes.object,
 	onSelect: PropTypes.func,
 	onDone: PropTypes.func,
@@ -112,7 +111,6 @@ InputPopup.propTypes = {
 InputPopup.defaultProps = {
 	show: false,
 	keyword: '',
-	data: [],
 }
 
 export default InputPopup;

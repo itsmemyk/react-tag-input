@@ -90,7 +90,7 @@ export class InputWrapper extends Component {
 
 	render() {
 		const { showPopup, value, keyword } = this.state;
-		const { predicate, data, element } = this.props;
+		const { predicate, element } = this.props;
 		return (
 			<div className="custom-input-control">
 				{
@@ -106,7 +106,6 @@ export class InputWrapper extends Component {
 					show={showPopup}
 					keyword={keyword}
 					predicate={predicate}
-					data={data}
 					onDone={() => this.setState({ showPopup: false })}
 					onSelect={(name) => this.onSelect(name)}
 				/>
@@ -116,7 +115,6 @@ export class InputWrapper extends Component {
 };
 
 InputWrapper.propTypes = {
-	data: PropTypes.array,
 	predicate: PropTypes.object.isRequired,
 	tagSymbol: PropTypes.string,
 	defaultValue: PropTypes.string,
@@ -126,7 +124,6 @@ InputWrapper.propTypes = {
 };
 
 InputWrapper.defaultProps = {
-	data: [],
 	defaultValue: '',
 	element: <input type="text" />,
 	elementNode: null,
