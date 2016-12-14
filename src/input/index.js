@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { FormGroup, InputGroup, FormControl } from 'react-bootstrap';
-
+import Textarea from 'react-textarea-autosize';
 import InputPopup from './popup';
 import './style.css';
 
@@ -29,7 +29,7 @@ export class InputWrapper extends Component {
 	}
 
 	getNode() {
-		return ReactDOM.findDOMNode(this.input);
+		return ReactDOM.findDOMNode(this.input._rootDOMNode);
 	}
 
 	setValues(data) {
@@ -94,9 +94,12 @@ export class InputWrapper extends Component {
 				<FormGroup>
 					<InputGroup>
 						<InputGroup.Addon> + </InputGroup.Addon>
-						<FormControl
+						<Textarea
+							className="form-control"
+							minRows={2}
+							maxRows={5}
+							style={{ maxHeight: 300 }}
 							ref={(input) => this.input = input}
-							type="text"
 							value={value}
 							onKeyDown={(e) => this.onKeyDown(e)}
 							onChange={(e) => this.handleChange(e)}
