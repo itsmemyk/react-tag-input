@@ -68,7 +68,7 @@ export class InputWrapper extends Component {
 	}
 
 	onSelect(name, showPopup = false) {
-		const { value } = this.state;
+		const { value } = this.props;
 		const startSelection = this.getNode().selectionStart;
 		let joinValue = joinKeyword(value, name, startSelection, this.props.tagSymbol).trim() + ' ';
 		this.setValues({ value: joinValue, showPopup })
@@ -89,8 +89,8 @@ export class InputWrapper extends Component {
 	}
 
 	render() {
-		const { showPopup, value, keyword } = this.state;
-		const { predicate, element } = this.props;
+		const { showPopup, keyword } = this.state;
+		const { predicate, value, element } = this.props;
 		return (
 			<div className="custom-input-control">
 				{
@@ -118,6 +118,7 @@ InputWrapper.propTypes = {
 	predicate: PropTypes.object.isRequired,
 	tagSymbol: PropTypes.string,
 	defaultValue: PropTypes.string,
+	value: PropTypes.string,
 	element: PropTypes.any,
 	elementNode: PropTypes.any,
 	onChange: PropTypes.func,
@@ -125,6 +126,7 @@ InputWrapper.propTypes = {
 
 InputWrapper.defaultProps = {
 	defaultValue: '',
+	value: null,
 	element: <input type="text" />,
 	elementNode: null,
 	predicate: {

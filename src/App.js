@@ -13,6 +13,7 @@ class App extends Component {
 		super();
 		this.state = {
 			peoples: [],
+			value: '',
 		};
 	}
 
@@ -29,30 +30,31 @@ class App extends Component {
 		this.setState({ peoples })
 	}
 
+	clear() {
+		this.setState({ value: '' });
+	}
+
   render() {
     return (
       <div className="App">
-				<FormGroup>
-					<InputGroup>
-						<InputGroup.Addon> + </InputGroup.Addon>
-						<InputControl
-							tagSymbol="@"
-							element={<Textarea
-								className="form-control"
-								minRows={2}
-								maxRows={5}
-							/>}
-							elementNode="_rootDOMNode"
-							predicate={{
-								key: 'username',
-								selector: matchNames,
-								element: <RenderAvatar />,
-								data: this.state.peoples,
-							}}
-							onChange={(e) => console.log('receive value', e)}
-						/>
-					</InputGroup>
-				</FormGroup>
+					<InputControl
+						tagSymbol="@"
+						element={<Textarea
+							className="form-control"
+							minRows={2}
+							maxRows={5}
+						/>}
+						elementNode="_rootDOMNode"
+						predicate={{
+							key: 'username',
+							selector: matchNames,
+							element: <RenderAvatar />,
+							data: this.state.peoples,
+						}}
+						value={this.state.value}
+						onChange={(value) => this.setState({ value })}
+					/>
+					<button onClick={() => this.clear()} type="button">clear</button>
       </div>
     );
   }
